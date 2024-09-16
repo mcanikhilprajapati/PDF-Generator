@@ -21,7 +21,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    kotlinOptions {
+        jvmTarget = '9'
+    }
     namespace 'com.uttampanchasara.pdf'
+    compileOptions {
+        sourceCompatibility kotlin_version
+        targetCompatibility kotlin_version
+    }
+    buildToolsVersion '34.0.0'
 }
 
 dependencies {

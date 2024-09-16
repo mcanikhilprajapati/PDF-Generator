@@ -5,11 +5,7 @@ android {
     defaultConfig {
         minSdk 23
         targetSdk 34
-        versionCode 1
-        versionName "1.1"
-        aarMetadata {
-            minCompileSdk = 29
-        }
+
     }
 
     buildTypes {
@@ -20,6 +16,11 @@ android {
     }
 
     namespace 'com.btpl.pdfgenerator'
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_11
+        sourceCompatibility JavaVersion.VERSION_11
+    }
+    buildToolsVersion '34.0.0'
 }
 
 dependencies {
