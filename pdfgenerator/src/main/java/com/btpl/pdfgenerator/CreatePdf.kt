@@ -1,4 +1,4 @@
-package com.uttampanchasara.pdfgenerator
+package com.btpl.pdfgenerator
 
 import android.annotation.SuppressLint
 import android.content.Context
