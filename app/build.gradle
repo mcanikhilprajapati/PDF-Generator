@@ -21,13 +21,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    kotlinOptions {
-        jvmTarget = '9'
-    }
+//    kotlinOptions {
+//        jvmTarget = '9'
+//    }
     namespace 'com.uttampanchasara.pdf'
+
     compileOptions {
-        sourceCompatibility kotlin_version
-        targetCompatibility kotlin_version
+        targetCompatibility JavaVersion.VERSION_17
+        sourceCompatibility JavaVersion.VERSION_17
     }
     buildToolsVersion '34.0.0'
 }
@@ -38,9 +39,9 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:2.0.4'
 
     implementation project(':pdfgenerator')
-
-//    implementation 'com.github.mcanikhilprajapati:PDF-Generator:1.1'
+//    implementation 'com.github.mcanikhilprajapati:PDF-Generator:v1.2'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+//    implementation project(':pdfgenerator')
 }
 repositories {
     mavenCentral()
