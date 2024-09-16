@@ -1,5 +1,18 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply plugin: 'maven-publish'
 
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId 'btplpdfgen'
+            artifactId project.name
+            version '1.0-SNAPSHOT'
+        }
+    }
+    repositories {
+        mavenLocal()
+    }
+}
 buildscript {
     ext.kotlin_version = '1.7.10'
     repositories {

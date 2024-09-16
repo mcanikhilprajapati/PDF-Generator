@@ -1,6 +1,5 @@
 apply plugin: 'com.android.library'
 
-
 android {
     compileSdk 34
     defaultConfig {
@@ -8,6 +7,9 @@ android {
         targetSdk 34
         versionCode 1
         versionName "1.1"
+        aarMetadata {
+            minCompileSdk = 29
+        }
     }
 
     buildTypes {
@@ -16,6 +18,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
     namespace 'com.btpl.pdfgenerator'
 }
 

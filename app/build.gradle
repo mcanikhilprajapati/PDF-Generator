@@ -31,7 +31,7 @@ dependencies {
 
     implementation project(':pdfgenerator')
 
-//    implementation 'com.github.mcanikhilprajapati:PDF-Generator:master-SNAPSHOT'
+//    implementation 'com.github.mcanikhilprajapati:PDF-Generator:1.1'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 repositories {
