@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
-
+apply plugin: 'maven-publish'
 android {
     compileSdk 34
     defaultConfig {
@@ -28,7 +28,7 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:2.0.4'
 
     implementation project(':pdfgenerator')
-//    implementation 'com.github.mcanikhilprajapati:PDF-Generator:1.3'
+//    implementation 'com.github.mcanikhilprajapati:PDF-Generator:master-SNAPSHOT'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 repositories {
