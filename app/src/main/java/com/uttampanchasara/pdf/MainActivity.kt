@@ -1,14 +1,15 @@
 package com.uttampanchasara.pdf
 
 import android.os.Bundle
+import android.print.CreatePdf
+import android.print.PdfCallbackListener
 import android.print.PrintAttributes
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.Button
 import android.widget.Toast
-import com.btpl.pdfgenerator.CreatePdf
 
-class MainActivity : AppCompatActivity(), CreatePdf.PdfCallbackListener {
+class MainActivity : AppCompatActivity(), PdfCallbackListener {
 
     override fun onSuccess(filePath: String) {
         Log.i("MainActivity", "Pdf Saved at: $filePath")
@@ -30,7 +31,7 @@ class MainActivity : AppCompatActivity(), CreatePdf.PdfCallbackListener {
         val btnPrintAndSave = findViewById<Button>(R.id.btnPrintAndSave)
         btnPrint.setOnClickListener {
             openPrintDialog = false
-           doPrint()
+            doPrint()
         }
 
         btnPrintAndSave.setOnClickListener {
@@ -47,13 +48,14 @@ class MainActivity : AppCompatActivity(), CreatePdf.PdfCallbackListener {
             .setPageSize(PrintAttributes.MediaSize.ISO_A4)
             .setFilePath(getExternalFilesDir(null)!!.absolutePath + "/MyPdf")
             .setContent(getString(R.string.content))
-            .setCallbackListener(object : CreatePdf.PdfCallbackListener {
+            .setCallbackListener(object : PdfCallbackListener {
                 override fun onFailure(errorMsg: String) {
                     Toast.makeText(this@MainActivity, errorMsg, Toast.LENGTH_SHORT).show()
                 }
 
                 override fun onSuccess(filePath: String) {
-                    Toast.makeText(this@MainActivity, "Pdf Saved at: $filePath", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@MainActivity, "Pdf Saved at: $filePath", Toast.LENGTH_SHORT)
+                        .show()
                 }
             })
             .create()
