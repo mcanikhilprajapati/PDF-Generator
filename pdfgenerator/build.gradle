@@ -4,12 +4,15 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'maven-publish'
 
-publishing {
-    publications {
-        maven(MavenPublication) {
-            groupId = 'com.btpl.pdfgenerator'
-            artifactId = 'library'
-            version = '1.1'
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.btpl.pdfgenerator'
+                artifactId = 'library'
+                version = '1.1'
+            }
         }
     }
 }
